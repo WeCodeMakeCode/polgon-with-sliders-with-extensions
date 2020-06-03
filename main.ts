@@ -44,12 +44,15 @@ function right_or_left (inc: number) {
     if (active_slider == slider_sides) {
         active_slider.value += inc
         p.sides += inc
+        slider_starting_angle.value = 0
+        p.angle += 0
     } else if (active_slider == slider_color) {
         active_slider.value += inc
         p.color += inc
     } else {
-        active_slider.value += inc * (360 / p.sides)
-        p.angle += inc * (360 / p.sides)
+        tmp_angle = inc * (360 / p.sides) / 4
+        active_slider.value += tmp_angle
+        p.angle += tmp_angle
     }
 }
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
@@ -61,6 +64,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
     right_or_left(-1)
 })
+let tmp_angle = 0
 let this_left = 0
 let slider_between = 0
 let active_slider: Slider = null
@@ -73,6 +77,7 @@ let time = 0
 time = game.runtime()
 time_inc = 2000
 p = polygon.createPolygon(3, 30, 6, 0)
+pause(1000)
 let slider_width = 40
 slider_sides = slider.create(3, 3, 30, slider_width, 6)
 slider_starting_angle = slider.create(0, 0, 360, slider_width, 6)
