@@ -50,7 +50,7 @@ function right_or_left (inc: number) {
         active_slider.value += inc
         p.color += inc
     } else {
-        tmp_angle = inc * (360 / p.sides) / 4
+        tmp_angle = Math.round(inc * (360 / p.sides) / 8)
         active_slider.value += tmp_angle
         p.angle += tmp_angle
     }
