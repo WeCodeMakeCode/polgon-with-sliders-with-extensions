@@ -2,8 +2,8 @@
     "name": "polgon with sliders",
     "dependencies": {
         "device": "*",
-        "Polygon Ext": "github:wecodemakecode/polygon-ext#master",
-        "slider ext": "github:wecodemakecode/slider-ext#master"
+        "slider ext": "github:wecodemakecode/slider-ext#master",
+        "Polygon Ext 2": "github:wecodemakecode/polygon-ext#master"
     },
     "description": "",
     "files": [
