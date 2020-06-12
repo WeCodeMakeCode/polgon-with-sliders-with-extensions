@@ -37,7 +37,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     }
 })
 function up_and_down_radius (amount: number) {
-    tmp = Math.min(Math.max(myPolygon.radius + amount, 10), 30)
+    tmp = Math.min(Math.max(myPolygon.radius + amount, 10), 50)
     slider_radius.value = tmp
     myPolygon.radius = tmp
 }
@@ -96,7 +96,7 @@ let time_inc = 0
 let time = 0
 time = game.runtime()
 time_inc = 0
-myPolygon = polygon.createPolygon(3, 30, 6, 0)
+myPolygon = polygon.createPolygon(3, 20, 6, 0)
 let slider_width = 40
 slider_sides = slider.create(3, 3, 30, slider_width, 6)
 slider_starting_angle = slider.create(0, 0, 360, slider_width, 6)
